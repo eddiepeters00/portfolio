@@ -8,6 +8,7 @@ const IntroContainer = animated(
     cursor: 'default',
     display: 'grid',
     placeItems: 'center',
+    paddingInline: '2rem',
     width: '100dvw',
   })
 );
@@ -28,6 +29,7 @@ const ButtonContainer = animated(
   styled.div({
     display: 'flex',
     gap: '1rem',
+    height: '4rem',
     marginTop: '2rem',
   })
 );
