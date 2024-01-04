@@ -16,7 +16,7 @@ function Header() {
   return (
     <StyledHeader>
       <p>Eddie Peters</p>
-      <p>Contact</p>
+      <div>Light/Dark Mode</div>
     </StyledHeader>
   );
 }

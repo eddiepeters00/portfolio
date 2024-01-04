@@ -44,7 +44,9 @@ function Intro() {
   return (
     <IntroContainer style={introAnimation}>
       <IntroTitle>Welcome to my portfolio</IntroTitle>
-      <IntroText>Have a look around and dont hesitate to contact me</IntroText>
+      <IntroText>
+        Have a look around and dont hesitate to <a href="#">contact me</a>
+      </IntroText>
       <ButtonContainer style={introAnimation}>
         <Button
           variant="primary"
