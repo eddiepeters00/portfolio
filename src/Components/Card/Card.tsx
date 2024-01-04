@@ -10,11 +10,12 @@ const CardGrid = styled.div({
 });
 
 const StyledCard = styled.div({
-  flexBasis: '80%',
-  backgroundColor: '#202e4a',
-  aspectRatio: '2/1',
-  marginTop: '10rem',
+  flexBasis: '100vw',
+  backgroundColor: 'hsl(220, 40%, 21%, .5)',
+  height: '80dvh',
+  marginBlock: '10rem',
   cursor: 'pointer',
+  scrollSnapAlign: 'center',
 });
 
 const StyledTitle = styled.h3({

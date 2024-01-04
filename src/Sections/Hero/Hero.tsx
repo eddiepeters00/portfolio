@@ -9,6 +9,7 @@ const StyledSection = animated(
     height: '100dvh',
     display: 'grid',
     placeItems: 'center',
+    scrollSnapAlign: 'center',
   })
 );
 
