@@ -2,13 +2,16 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 const CardGrid = styled.div({
-  display: 'grid',
-  gridTemplateColumns: 'repeat( auto-fill, minmax(250px, 1fr) )',
+  display: 'flex',
+  flexFlow: 'row wrap',
   gap: '2rem',
+  justifyContent: 'center',
   margin: '4rem',
 });
 
 const StyledCard = styled.div({
+  flexBasis: 'auto',
+  width: '15rem',
   backgroundColor: 'green',
   aspectRatio: '3/4',
 });
