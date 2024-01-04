@@ -6,19 +6,24 @@ const CardGrid = styled.div({
   flexFlow: 'row wrap',
   gap: '2rem',
   justifyContent: 'center',
-  margin: '4rem',
+  marginTop: '20rem',
 });
 
 const StyledCard = styled.div({
-  flexBasis: 'auto',
-  width: '15rem',
-  backgroundColor: 'green',
-  aspectRatio: '3/4',
+  flexBasis: '80%',
+  backgroundColor: '#202e4a',
+  aspectRatio: '2/1',
+  marginTop: '10rem',
+  cursor: 'pointer',
 });
 
-const StyledTitle = styled.h3({});
+const StyledTitle = styled.h3({
+  color: 'whiteSmoke',
+});
 
-const StyledDescription = styled.p({});
+const StyledDescription = styled.p({
+  color: 'gray',
+});
 
 type CardProps = {
   url?: string;
