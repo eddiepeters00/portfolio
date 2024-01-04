@@ -34,7 +34,7 @@ const ButtonContainer = animated(
   })
 );
 function Hero() {
-  const introAnimation = useSpring({
+  const heroAnimation = useSpring({
     opacity: 1,
     translateY: 0,
     from: { opacity: 0, translateY: -100 },
@@ -42,10 +42,10 @@ function Hero() {
   });
 
   return (
-    <HeroContainer style={introAnimation}>
+    <HeroContainer style={heroAnimation}>
       <HeroTitle>Welcome to my portfolio</HeroTitle>
       <HeroText>Have a look around and dont hesitate to contact me</HeroText>
-      <ButtonContainer style={introAnimation}>
+      <ButtonContainer style={heroAnimation}>
         <Button
           variant="primary"
           onClick={() => {
