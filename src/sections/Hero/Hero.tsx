@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { useSpring, animated, config } from 'react-spring';
-import Button from '../Button/Button';
+import Button from '../../components/Button/Button';
 
-const IntroContainer = animated(
+const HeroContainer = animated(
   styled.section({
     textAlign: 'center',
     cursor: 'default',
@@ -12,14 +12,14 @@ const IntroContainer = animated(
     width: '100dvw',
   })
 );
-const IntroTitle = styled.h2({
+const HeroTitle = styled.h2({
   textTransform: 'capitalize',
   fontSize: '2.8rem',
   fontWeight: '400',
   color: 'whitesmoke',
 });
 
-const IntroText = styled.p({
+const HeroText = styled.p({
   color: 'gray',
   fontWeight: '500',
   marginTop: '.5rem',
@@ -33,7 +33,7 @@ const ButtonContainer = animated(
     marginTop: '2rem',
   })
 );
-function Intro() {
+function Hero() {
   const introAnimation = useSpring({
     opacity: 1,
     translateY: 0,
@@ -42,9 +42,9 @@ function Intro() {
   });
 
   return (
-    <IntroContainer style={introAnimation}>
-      <IntroTitle>Welcome to my portfolio</IntroTitle>
-      <IntroText>Have a look around and dont hesitate to contact me</IntroText>
+    <HeroContainer style={introAnimation}>
+      <HeroTitle>Welcome to my portfolio</HeroTitle>
+      <HeroText>Have a look around and dont hesitate to contact me</HeroText>
       <ButtonContainer style={introAnimation}>
         <Button
           variant="primary"
@@ -63,8 +63,8 @@ function Intro() {
           Get to know me
         </Button>
       </ButtonContainer>
-    </IntroContainer>
+    </HeroContainer>
   );
 }
 
-export default Intro;
+export default Hero;

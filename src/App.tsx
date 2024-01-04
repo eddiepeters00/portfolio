@@ -1,12 +1,14 @@
 import './App.css';
-import Header from './components/Header/Header';
-import Intro from './components/Intro/Intro';
+import Header from './sections/Header/Header';
+import Hero from './sections/Hero/Hero';
+import Projects from './sections/Projects/Projects';
 
 function App() {
   return (
     <>
       <Header />
-      <Intro />
+      <Hero />
+      <Projects />
     </>
   );
 }
