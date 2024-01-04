@@ -41,6 +41,7 @@ const ButtonContainer = animated(
     marginTop: '2rem',
   })
 );
+
 function Hero() {
   const heroAnimation = useSpring({
     opacity: 1,
@@ -55,12 +56,7 @@ function Hero() {
         <HeroTitle>Welcome to my portfolio</HeroTitle>
         <HeroText>Have a look around and dont hesitate to contact me</HeroText>
         <ButtonContainer style={heroAnimation}>
-          <Button
-            variant="primary"
-            onClick={() => {
-              console.log('Clicked');
-            }}
-          >
+          <Button variant="primary" onClick={() => {}}>
             Check out my projects
           </Button>
           <Button
