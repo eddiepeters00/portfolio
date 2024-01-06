@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { motion, useScroll } from 'framer-motion';
+import { colors } from '../../assets/colors';
 
 const CardGrid = styled.div({
   display: 'flex',
@@ -12,7 +13,7 @@ const CardGrid = styled.div({
 
 const StyledCard = styled(motion.div)({
   flexBasis: '100vw',
-  backgroundColor: 'hsl(220, 40%, 21%, .5)',
+  backgroundColor: colors.backgroundColor.darkBlue,
   height: '80dvh',
   marginBlock: '10rem',
   cursor: 'pointer',
@@ -20,11 +21,11 @@ const StyledCard = styled(motion.div)({
 });
 
 const StyledTitle = styled.h3({
-  color: 'whiteSmoke',
+  color: colors.textColor.white,
 });
 
 const StyledDescription = styled.p({
-  color: 'gray',
+  color: colors.textColor.gray,
 });
 
 type CardProps = {

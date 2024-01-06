@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { colors } from '../../assets/colors';
 
 const StyledProgressbar = styled(motion.div)({
   position: 'absolute',
@@ -8,7 +9,7 @@ const StyledProgressbar = styled(motion.div)({
   bottom: '0',
   width: '20%',
   transformOrigin: 'top',
-  backgroundColor: 'red',
+  backgroundColor: colors.backgroundColor.lightRed,
   boxShadow:
     '0 0 2px #fff,0 1px #fff,0 0 4px #fff,0 0 6px #fb5e58,0 0 10px #fb5e58,0 0 12px #fb5e58,0 0 5px #fb5e58,0 0 5px #fb5e58',
 });
@@ -28,7 +29,7 @@ const StyledOverlay = styled.div({
   right: '0',
   bottom: '-1%',
   width: '100%',
-  background: 'rgba(0, 0, 0, 0.4)',
+  background: 'rgba(0, 0, 0, 0.2)',
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   backdropFilter: 'blur(5px)',
   WebkitBackdropFilter: 'blur(5px)',

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useSpring, animated, config } from 'react-spring';
 import Button from '../../Components/Button/Button';
+import { colors } from '../../assets/colors';
 
 const StyledSection = animated(
   styled.section({
@@ -24,11 +25,11 @@ const HeroTitle = styled.h2({
   textTransform: 'capitalize',
   fontSize: '2.8rem',
   fontWeight: '400',
-  color: 'whitesmoke',
+  color: colors.textColor.white,
 });
 
 const HeroText = styled.p({
-  color: 'gray',
+  color: colors.textColor.gray,
   fontWeight: '500',
   marginTop: '.5rem',
 });

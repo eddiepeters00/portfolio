@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { colors } from '../../assets/colors';
 
 const StyledHeader = styled.header({
-  color: 'white',
+  color: colors.textColor.white,
   position: 'fixed',
   top: '0',
   display: 'flex',
