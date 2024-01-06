@@ -3,6 +3,7 @@ import Progressbar from './Components/Progressbar/Progressbar';
 
 import Header from './Sections/Header/Header';
 import Hero from './Sections/Hero/Hero';
+import About from './Sections/About/About';
 import Projects from './Sections/Projects/Projects';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Progressbar />
       <Header />
       <Hero />
+      <About />
       <Projects />
     </>
   );
