@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colors } from '../../assets/colors';
+import { colors } from '../../assets/colors/colors';
 
 const StyledButton = styled.button({
   borderRadius: '.25rem',

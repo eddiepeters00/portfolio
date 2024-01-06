@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { motion, useScroll } from 'framer-motion';
-import { colors } from '../../assets/colors';
+import { colors } from '../../assets/colors/colors';
 
 const CardGrid = styled.div({
   display: 'flex',

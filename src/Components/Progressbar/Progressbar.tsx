@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { colors } from '../../assets/colors';
+import { colors } from '../../assets/colors/colors';
 
 const StyledProgressbar = styled(motion.div)({
   position: 'absolute',
