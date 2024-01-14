@@ -11,12 +11,11 @@ const StyledTextContainer = styled.section({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  gap: '2rem',
-});
-
-const StyledTextGroup = styled.div({
+  alignItems: 'center',
   margin: '1rem',
 });
+
+const StyledTextGroup = styled.div({});
 
 const StyledHeading = styled.h3({});
 
@@ -34,7 +33,6 @@ function About() {
             2020, where I discovered my passion for coding and problem-solving.
           </StyledParagraph>
         </StyledTextGroup>
-
         <StyledTextGroup>
           <StyledHeading>Experience</StyledHeading>
           <StyledParagraph>
@@ -43,16 +41,6 @@ function About() {
             compnent library with storybook.
           </StyledParagraph>
         </StyledTextGroup>
-
-        <StyledTextGroup>
-          <StyledHeading>Experience</StyledHeading>
-          <StyledParagraph>
-            Im recently doing my 20 week long internship at Ourliving in Malmö
-            where i've been creating flexible webcomponents and adding them to a
-            compnent library with storybook.
-          </StyledParagraph>
-        </StyledTextGroup>
-
         <StyledTextGroup>
           <StyledHeading>Interests</StyledHeading>
           <StyledParagraph>
@@ -65,6 +53,7 @@ function About() {
       </StyledTextContainer>
 
       <img
+        style={{ width: '50%', objectFit: 'cover' }}
         src="./src/images/full-shot-man-working-laptop.jpg"
         alt="A picture of my beautyfull face"
       />
