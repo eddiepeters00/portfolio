@@ -2,6 +2,8 @@
 
 Welcome to my GitHub portfolio! This repository showcases my work as a developer and highlights some of the projects I've been working on. 
 
+This project was built using **TypeScript**, **React**, **Vite** and **EmotionJS**.
+
 ## About Me
 Hi, I'm Eddie Peters, a full-stack JS developer based in Malmö, Sweden. My journey into programming began at Malmö University in 2020, where I discovered my passion for coding and problem-solving. Im recently doing my 20 week long internship at Ourliving in Malmö where i've been creating flexible webcomponents and adding them to a component library with storybook and implemented them in their projects.
 
