@@ -12,7 +12,7 @@ Outside of coding, you'll find me enjoying a good cup of coffee ☕, playing the
 Feel free to reach out to me! Here are some ways to contact me:
 
 - **Email:** [eddie.peters00@outlook.com](mailto:eddie.peters00@outlook.com)
-- **LinkedIn:** [Eddie Peters]([https://www.linkedin.com/in/your-linkedin-profile](https://linkedin.com/in/eddie-peters00))
+- **LinkedIn:** [Eddie Peters](https://linkedin.com/in/eddie-peters00)
 
 
 Thank you for visiting my portfolio!
