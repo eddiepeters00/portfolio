@@ -8,7 +8,6 @@ const StyledHeader = styled.header({
   position: 'fixed',
   top: '0',
   display: 'flex',
-  flexFlow: 'row noWrap',
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '1rem',
@@ -22,18 +21,20 @@ const StyledLogo = styled.h1({
 
 const SocialMediaContainer = styled.div({
   display: 'flex',
-  gap: '2rem',
   justifyContent: 'center',
   alignItems: 'center',
+  gap: '2rem',
   marginRight: '1rem',
 });
 
 const SocialMediaIcon = styled.img({
+  display: 'grid',
+  placeContent: 'center',
   maxWidth: '100%',
-  width: '4rem',
+  width: '3rem',
   backgroundColor: 'white',
   borderRadius: '1rem',
-  padding: '.5rem',
+  padding: '.25rem',
 });
 
 function Header() {
@@ -41,8 +42,20 @@ function Header() {
     <StyledHeader>
       <StyledLogo>Eddie Peters</StyledLogo>
       <SocialMediaContainer>
-        <SocialMediaIcon src={images.github}></SocialMediaIcon>
-        <SocialMediaIcon src={images.linkedin}></SocialMediaIcon>
+        <a href="https://github.com/eddiepeters00">
+          <SocialMediaIcon
+            src={images.github}
+            title="Github"
+            alt="Github icon"
+          ></SocialMediaIcon>
+        </a>
+        <a href="https://linkedin.com/in/eddie-peters00">
+          <SocialMediaIcon
+            src={images.linkedin}
+            title="LinkedIn"
+            alt="LinkedIn icon"
+          ></SocialMediaIcon>
+        </a>
       </SocialMediaContainer>
     </StyledHeader>
   );
