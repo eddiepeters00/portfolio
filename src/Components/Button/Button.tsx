@@ -1,24 +1,24 @@
 import styled from '@emotion/styled';
-import { ReactNode } from 'react';
+import { colors } from '../../assets/colors/colors';
 
 const StyledButton = styled.button({
   borderRadius: '.25rem',
-  color: 'whitesmoke',
+  color: colors.textColor.white,
   fontWeight: 'bold',
   textTransform: 'uppercase',
   padding: '.8rem',
 
   /* variant */
   '&.primary': {
-    backgroundColor: '#fb5e58',
+    backgroundColor: colors.backgroundColor.lightRed,
   },
 
   '&.secondary': {
-    backgroundColor: 'green',
+    backgroundColor: colors.backgroundColor.deepBlue,
   },
 
   '&.outlined': {
-    backgroundColor: '#202e4a',
+    backgroundColor: colors.backgroundColor.deepBlue,
   },
 
   /* Size */
@@ -33,7 +33,7 @@ type ButtonProps = {
   variant: 'primary' | 'secondary' | 'outlined';
   size?: 'small' | 'medium' | 'large';
   onClick(): void;
-  children: ReactNode;
+  children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 function Button({ variant, size, onClick, children }: ButtonProps) {
