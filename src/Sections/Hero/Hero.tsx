@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useSpring, animated, config } from 'react-spring';
 import Button from '../../Components/Button/Button';
-import { colors } from '../../assets/colors';
+import { colors } from '../../assets/colors/colors';
 
 const StyledSection = animated(
   styled.section({

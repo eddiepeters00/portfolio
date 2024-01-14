@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { colors } from '../../assets/colors';
+import { colors } from '../../assets/colors/colors';
+import { styles } from '../../assets/styles/styles';
 
 const StyledProgressbar = styled(motion.div)({
   position: 'absolute',
@@ -10,8 +11,7 @@ const StyledProgressbar = styled(motion.div)({
   width: '20%',
   transformOrigin: 'top',
   backgroundColor: colors.backgroundColor.lightRed,
-  boxShadow:
-    '0 0 2px #fff,0 1px #fff,0 0 4px #fff,0 0 6px #fb5e58,0 0 10px #fb5e58,0 0 12px #fb5e58,0 0 5px #fb5e58,0 0 5px #fb5e58',
+  boxShadow: styles.neon,
 });
 
 const StyledProgressbarContainer = styled.div({
