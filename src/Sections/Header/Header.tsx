@@ -17,10 +17,12 @@ const StyledHeader = styled.header({
 const StyledLogo = styled.h1({
   color: 'black',
   textShadow: styles.neon,
+  fontSize: '3.2em',
+  lineHeight: '1.1',
   cursor: 'pointer',
-  transition: '.2s ease',
+  transition: '1s ease',
   ':hover': {
-    WebkitTextStroke: '1px red',
+    WebkitTextStroke: `1px ${colors.backgroundColor.lightRed}`,
   },
 });
 
@@ -40,6 +42,10 @@ const SocialMediaIcon = styled.img({
   backgroundColor: 'white',
   borderRadius: '1rem',
   padding: '.25rem',
+  transition: '.2s ease',
+  ':hover': {
+    boxShadow: `0px 0px 10px 4px ${colors.backgroundColor.lightRed}`,
+  },
 });
 
 function Header() {

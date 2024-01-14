@@ -3,10 +3,23 @@ import { colors } from '../../assets/colors/colors';
 
 const StyledButton = styled.button({
   borderRadius: '.25rem',
+  border: `1px solid ${colors.backgroundColor.deepBlue}`,
   color: colors.textColor.white,
   fontWeight: 'bold',
   textTransform: 'uppercase',
-  padding: '.8rem',
+  padding: '0.6em 1.2em',
+  fontSize: '1em',
+  fontFamily: 'inherit',
+  cursor: 'pointer',
+  transition: '.2s ease',
+
+  ':hover': {
+    boxShadow: `0px 0px 10px 4px ${colors.backgroundColor.lightRed}`,
+  },
+
+  ':focus, :focus-visible': {
+    outline: ' 4px auto -webkit-focus-ring-color',
+  },
 
   /* variant */
   '&.primary': {
