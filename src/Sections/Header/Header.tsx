@@ -17,6 +17,13 @@ const StyledHeader = styled.header({
 const StyledLogo = styled.h1({
   color: 'black',
   textShadow: styles.neon,
+  fontSize: '3.2em',
+  lineHeight: '1.1',
+  cursor: 'pointer',
+  transition: '1s ease',
+  ':hover': {
+    WebkitTextStroke: `1px ${colors.backgroundColor.lightRed}`,
+  },
 });
 
 const SocialMediaContainer = styled.div({
@@ -35,12 +42,18 @@ const SocialMediaIcon = styled.img({
   backgroundColor: 'white',
   borderRadius: '1rem',
   padding: '.25rem',
+  transition: '.2s ease',
+  ':hover': {
+    boxShadow: `0px 0px 10px 4px ${colors.backgroundColor.lightRed}`,
+  },
 });
 
 function Header() {
   return (
     <StyledHeader>
-      <StyledLogo>Eddie Peters</StyledLogo>
+      <a href="/">
+        <StyledLogo>Eddie Peters</StyledLogo>
+      </a>
       <SocialMediaContainer>
         <a href="https://github.com/eddiepeters00">
           <SocialMediaIcon
