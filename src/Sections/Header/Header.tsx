@@ -17,6 +17,11 @@ const StyledHeader = styled.header({
 const StyledLogo = styled.h1({
   color: 'black',
   textShadow: styles.neon,
+  cursor: 'pointer',
+  transition: '.2s ease',
+  ':hover': {
+    WebkitTextStroke: '1px red',
+  },
 });
 
 const SocialMediaContainer = styled.div({
@@ -40,7 +45,9 @@ const SocialMediaIcon = styled.img({
 function Header() {
   return (
     <StyledHeader>
-      <StyledLogo>Eddie Peters</StyledLogo>
+      <a href="/">
+        <StyledLogo>Eddie Peters</StyledLogo>
+      </a>
       <SocialMediaContainer>
         <a href="https://github.com/eddiepeters00">
           <SocialMediaIcon
