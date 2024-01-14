@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { colors } from '../../assets/colors/colors';
+import { styles } from '../../assets/styles/styles';
 
 const StyledHeader = styled.header({
   color: colors.textColor.white,
@@ -15,8 +16,7 @@ const StyledHeader = styled.header({
 
 const StyledLogo = styled.h1({
   color: 'black',
-  textShadow:
-    '0 0 2px #fff,0 1px #fff,0 0 4px #fff,0 0 6px #fb5e58,0 0 10px #fb5e58,0 0 12px #fb5e58,0 0 5px #fb5e58,0 0 5px #fb5e58',
+  textShadow: styles.neon,
 });
 
 function Header() {

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { colors } from '../../assets/colors/colors';
 
 const CardGrid = styled.div({
@@ -31,15 +31,13 @@ const StyledDescription = styled.p({
 type CardProps = {
   url?: string;
   children: React.ReactNode;
-};
+} & React.ComponentProps<typeof StyledCard>;
 
 const Card: React.FC<CardProps> & {
   Title: typeof StyledTitle;
   Description: typeof StyledDescription;
   Grid: typeof CardGrid;
 } = ({ children, ...CardProps }) => {
-  const { scrollYProgress } = useScroll();
-
   return <StyledCard {...CardProps}>{children}</StyledCard>;
 };
 
