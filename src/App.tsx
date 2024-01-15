@@ -1,10 +1,10 @@
 import './App.css';
-import Progressbar from './Components/Progressbar/Progressbar';
+import Progressbar from './components/Progressbar/Progressbar';
 
-import Header from './Sections/Header/Header';
-import Hero from './Sections/Hero/Hero';
-import About from './Sections/About/About';
-import Projects from './Sections/Projects/Projects';
+import Header from './sections/Header/Header';
+import Hero from './sections/Hero/Hero';
+import About from './sections/About/About';
+import Projects from './sections/Projects/Projects';
 
 function App() {
   return (

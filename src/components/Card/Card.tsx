@@ -9,10 +9,11 @@ const CardGrid = styled.div({
   gap: '2rem',
   justifyContent: 'center',
   marginTop: '20rem',
+  width: '100%',
 });
 
 const StyledCard = styled(motion.div)({
-  flexBasis: '100vw',
+  flexBasis: '100%',
   backgroundColor: colors.backgroundColor.darkBlue,
   height: '80dvh',
   marginBlock: '10rem',

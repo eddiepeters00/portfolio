@@ -4,6 +4,7 @@ const StyledAboutContainer = styled.article({
   backgroundColor: 'whiteSmoke',
   scrollSnapAlign: 'center',
   height: '80dvh',
+  width: '100%',
   display: 'flex',
 });
 
