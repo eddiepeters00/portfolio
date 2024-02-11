@@ -1,32 +1,35 @@
-import styled from '@emotion/styled';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { colors } from '../../assets/colors/colors';
+import styled from "@emotion/styled";
+import React from "react";
+import { motion } from "framer-motion";
+import { colors } from "../../assets/colors/colors";
 
 const CardGrid = styled.div({
-  display: 'flex',
-  flexFlow: 'row wrap',
-  gap: '2rem',
-  justifyContent: 'center',
-  marginTop: '20rem',
-  width: '100%',
+  display: "grid",
 });
 
 const StyledCard = styled(motion.div)({
-  flexBasis: '100%',
+  display: "grid",
+  justifyContent: "center",
   backgroundColor: colors.backgroundColor.darkBlue,
-  height: '80dvh',
-  marginBlock: '10rem',
-  cursor: 'pointer',
-  scrollSnapAlign: 'center',
+  marginBlock: "10rem",
+  scrollSnapAlign: "center",
+  padding: "4rem",
 });
 
 const StyledTitle = styled.h3({
   color: colors.textColor.white,
+  fontSize: "3rem",
 });
 
 const StyledDescription = styled.p({
   color: colors.textColor.gray,
+});
+
+const StyledContent = styled.div({
+  display: "grid",
+  marginTop: "1rem",
+  gap: "2rem",
+  maxWidth: "1000px",
 });
 
 type CardProps = {
@@ -37,6 +40,7 @@ type CardProps = {
 const Card: React.FC<CardProps> & {
   Title: typeof StyledTitle;
   Description: typeof StyledDescription;
+  Content: typeof StyledContent;
   Grid: typeof CardGrid;
 } = ({ children, ...CardProps }) => {
   return <StyledCard {...CardProps}>{children}</StyledCard>;
@@ -45,5 +49,6 @@ const Card: React.FC<CardProps> & {
 Card.Grid = CardGrid;
 Card.Title = StyledTitle;
 Card.Description = StyledDescription;
+Card.Content = StyledContent;
 
 export default Card;

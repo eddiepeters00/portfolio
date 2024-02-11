@@ -1,45 +1,43 @@
-import styled from '@emotion/styled';
-import { useSpring, animated, config } from 'react-spring';
-import Button from '../../components/Button/Button';
-import { colors } from '../../assets/colors/colors';
+import styled from "@emotion/styled";
+import { useSpring, animated, config } from "react-spring";
+import Button from "../../components/Button/Button";
+import { colors } from "../../assets/colors/colors";
 
 const StyledSection = animated(
   styled.section({
-    paddingInline: '2rem',
-    width: '100dvw',
-    height: '100dvh',
-    display: 'grid',
-    placeItems: 'center',
-    scrollSnapAlign: 'center',
+    height: "100dvh",
+    display: "grid",
+    placeItems: "center",
+    scrollSnapAlign: "center",
   })
 );
 
 const HeroContainer = styled.div({
-  textAlign: 'center',
-  cursor: 'default',
-  display: 'grid',
-  placeItems: 'center',
+  textAlign: "center",
+  cursor: "default",
+  display: "grid",
+  placeItems: "center",
 });
 
 const HeroTitle = styled.h2({
-  textTransform: 'capitalize',
-  fontSize: '2.8rem',
-  fontWeight: '400',
+  textTransform: "capitalize",
+  fontSize: "2.8rem",
+  fontWeight: "400",
   color: colors.textColor.white,
 });
 
 const HeroText = styled.p({
   color: colors.textColor.gray,
-  fontWeight: '500',
-  marginTop: '.5rem',
+  fontWeight: "500",
+  marginTop: ".5rem",
 });
 
 const ButtonContainer = animated(
   styled.div({
-    display: 'flex',
-    gap: '1rem',
-    height: '4rem',
-    marginTop: '2rem',
+    display: "flex",
+    gap: "1rem",
+    height: "4rem",
+    marginTop: "2rem",
   })
 );
 
@@ -63,7 +61,7 @@ function Hero() {
           <Button
             variant="outlined"
             onClick={() => {
-              console.log('Clicked');
+              console.log("Clicked");
             }}
           >
             Get to know me
