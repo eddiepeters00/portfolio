@@ -1,4 +1,5 @@
 import { styles } from "../../assets/styles/styles";
+import { colors } from "../../assets/colors/colors";
 import {
   css_svg,
   html_svg,
@@ -15,15 +16,21 @@ function About() {
       <Card.Title>About me</Card.Title>
       <Card.Content>
         <Card.Description>
-          Hi, I'm Eddie Peters, a full-stack JS developer based in Malmö,
-          Sweden. My journey into programming began at Malmö University in 2020,
-          where I discovered my passion for coding and problem-solving.
+          Hey there! 👋 I'm Eddie Peters, a full-stack JS developer based in
+          Malmö, Sweden. My journey into programming began at Malmö University
+          in 2020, where I discovered my passion for coding and problem-solving.
+          After i realized my passion was in webb i switched to Grit Academy to
+          persue my dreams of becoming a fullstack developer.
         </Card.Description>
         <Card.Description>
-          Outside of coding, you'll find me enjoying a good cup of coffee ☕,
-          playing the drums 🥁, listening to some good music 🎵, and pursuing
-          outdoor activities like snowboarding 🏂, skateboarding 🛹, rock
-          climbing 🧗‍♂️, and disc golf 🥏.
+          Fast forward to 2024, and here I am - a proud graduate from Grit
+          Academy with a degree in Frontend webbdevelopment ready to work with
+          skilled and talented people.
+        </Card.Description>
+        <Card.Description>
+          Beyond coding, you'll find me sipping on a cup of coffee ☕, playing
+          the drums 🥁, or listening to some good music 🎵. I also enjoy
+          snowboarding 🏂, skateboarding 🛹, climbing 🧗‍♂️ and discgolf 🥏
         </Card.Description>
       </Card.Content>
 
@@ -31,7 +38,7 @@ function About() {
         style={{
           backgroundColor: "black",
           marginTop: "4rem",
-          color: "whiteSmoke",
+          color: colors.textColor.gray,
           padding: "2rem",
           boxShadow: styles.neon,
           width: "100%",
@@ -39,7 +46,15 @@ function About() {
           justifySelf: "center",
         }}
       >
-        <h3 style={{ fontSize: "1.5rem", marginBottom: "2rem" }}>Techstack</h3>
+        <h3
+          style={{
+            fontSize: "1.5rem",
+            marginBottom: "2rem",
+            color: colors.textColor.white,
+          }}
+        >
+          Techstack
+        </h3>
 
         <div
           style={{
