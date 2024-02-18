@@ -1,5 +1,3 @@
-import { styles } from "../../assets/styles/styles";
-import { colors } from "../../assets/colors/colors";
 import {
   css_svg,
   html_svg,
@@ -9,6 +7,16 @@ import {
   ts_svg,
 } from "../../assets/images";
 import Card from "../../components/Card/Card";
+import { TechStack } from "../../components/TechStack/TechStack";
+
+const techStack = [
+  { name: "Javascript", src: js_svg },
+  { name: "TypeScript", src: ts_svg },
+  { name: "React.js", src: react_svg },
+  { name: "Node.js", src: node_svg },
+  { name: "CSS", src: css_svg },
+  { name: "HTML", src: html_svg },
+];
 
 function About() {
   return (
@@ -34,104 +42,7 @@ function About() {
         </Card.Description>
       </Card.Content>
 
-      <div
-        style={{
-          backgroundColor: "black",
-          marginTop: "4rem",
-          color: colors.textColor.gray,
-          padding: "2rem",
-          boxShadow: styles.neon,
-          width: "100%",
-          maxWidth: "1000px",
-          justifySelf: "center",
-        }}
-      >
-        <h3
-          style={{
-            fontSize: "1.5rem",
-            marginBottom: "2rem",
-            color: colors.textColor.white,
-          }}
-        >
-          Techstack
-        </h3>
-
-        <div
-          style={{
-            display: "grid",
-            gap: "2rem",
-            gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img style={{ maxWidth: "100%", padding: "1rem" }} src={js_svg} />
-            <span style={{ padding: ".5rem" }}>JavaScript</span>
-          </div>
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img style={{ maxWidth: "100%", padding: "1rem" }} src={ts_svg} />
-            <span style={{ padding: ".5rem" }}>TypeScript</span>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img style={{ maxWidth: "100%", padding: "1rem" }} src={css_svg} />
-            <span style={{ padding: ".5rem" }}>CSS</span>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img style={{ maxWidth: "100%", padding: "1rem" }} src={html_svg} />
-            <span style={{ padding: ".5rem" }}>HTML</span>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img
-              style={{ maxWidth: "100%", padding: "1rem" }}
-              src={react_svg}
-            />
-            <span style={{ padding: ".5rem" }}>React.js</span>
-          </div>
-
-          <div
-            style={{
-              display: "grid",
-              placeItems: "center",
-              backgroundColor: "hsl(220deg 40% 21% / 80%)",
-            }}
-          >
-            <img style={{ maxWidth: "100%", padding: "1rem" }} src={node_svg} />
-            <span style={{ padding: ".5rem" }}>Node.js</span>
-          </div>
-        </div>
-      </div>
+      <TechStack technologies={techStack} />
     </Card>
   );
 }
