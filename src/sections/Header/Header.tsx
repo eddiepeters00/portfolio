@@ -57,19 +57,15 @@ function Header() {
         <StyledLogo>Eddie Peters</StyledLogo>
       </a>
       <SocialMediaContainer>
-        <a href="https://github.com/eddiepeters00">
-          <SocialMediaIcon
-            src={github}
-            title="Github"
-            alt="Github icon"
-          ></SocialMediaIcon>
+        <a href="https://github.com/eddiepeters00" target="_blank">
+          <SocialMediaIcon src={github} title="Github" alt="Github icon" />
         </a>
-        <a href="https://linkedin.com/in/eddie-peters00">
+        <a href="https://www.linkedin.com/in/eddiepeters-dev/" target="_blank">
           <SocialMediaIcon
             src={linkedin}
             title="LinkedIn"
             alt="LinkedIn icon"
-          ></SocialMediaIcon>
+          />
         </a>
       </SocialMediaContainer>
     </StyledHeader>

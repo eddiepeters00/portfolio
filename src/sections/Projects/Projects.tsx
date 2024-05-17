@@ -1,68 +1,86 @@
-import {
-  css_svg,
-  html_svg,
-  js_svg,
-  node_svg,
-  react_svg,
-  ts_svg,
-  next,
-  mongoDB,
-  tailwind,
-  google_maps,
-  tanstack,
-  csharp,
-  aspnet,
-  bootstrap,
-  mssql,
-  java,
-  android,
-  python,
-  cplusplus,
-  firebase,
-} from "../../assets/images";
+import emotionStyled from "@emotion/styled";
+import * as icons from "../../assets/images";
 import Card from "../../components/Card/Card";
 import { TechStack } from "../../components/TechStack/TechStack";
+import { styles } from "../../assets/styles/styles";
+import Link from "../../components/Link/Link";
 
 const climbTrackerTechStack = [
-  { name: "TypeScript", src: ts_svg },
-  { name: "Next.js", src: next },
-  { name: "Node.js", src: node_svg },
-  { name: "MongoDB", src: mongoDB },
-  { name: "Tailwind", src: tailwind },
-  { name: "Google Maps API", src: google_maps },
-  { name: "Tanstack query", src: tanstack },
-  { name: "HTML", src: html_svg },
+  { name: "TypeScript", src: icons.ts_svg },
+  { name: "Next.js", src: icons.next },
+  { name: "Node.js", src: icons.node_svg },
+  { name: "MongoDB", src: icons.mongoDB },
+  { name: "Tailwind", src: icons.tailwind },
+  { name: "Google Maps API", src: icons.google_maps },
+  { name: "Tanstack query", src: icons.tanstack },
+  { name: "HTML", src: icons.html_svg },
 ];
 
 const spotifyTechStack = [
-  { name: "Javascript", src: js_svg },
-  { name: "React.js", src: react_svg },
-  { name: "Node.js", src: node_svg },
-  { name: "CSS", src: css_svg },
-  { name: "HTML", src: html_svg },
+  { name: "Javascript", src: icons.js_svg },
+  { name: "React.js", src: icons.react_svg },
+  { name: "Node.js", src: icons.node_svg },
+  { name: "Spotify API", src: icons.spotify },
+  { name: "CSS", src: icons.css_svg },
+  { name: "HTML", src: icons.html_svg },
 ];
 
 const jokesAppTechStack = [
-  { name: "C#", src: csharp },
-  { name: "ASP.NET", src: aspnet },
-  { name: "MSSQL", src: mssql },
-  { name: "Bootstrap", src: bootstrap },
-  { name: "CSS", src: css_svg },
-  { name: "HTML", src: html_svg },
+  { name: "C#", src: icons.csharp },
+  { name: "ASP.NET", src: icons.aspnet },
+  { name: "MSSQL", src: icons.mssql },
+  { name: "Bootstrap", src: icons.bootstrap },
+  { name: "CSS", src: icons.css_svg },
+  { name: "HTML", src: icons.html_svg },
 ];
 
+const signInTechStack = [
+  { name: "JavaScript", src: icons.js_svg },
+  { name: "Node.js", src: icons.node_svg },
+  { name: "MySQL", src: icons.mysql },
+  { name: "Bootstrap", src: icons.bootstrap },
+  { name: "Tanstack table", src: icons.tanstack },
+  { name: "HTML", src: icons.html_svg },
+  { name: "CSS", src: icons.css_svg },
+];
+
+const devRoom = [
+  { name: "TypeScript", src: icons.ts_svg },
+  { name: "Firebase", src: icons.firebase },
+  { name: "HTML", src: icons.html_svg },
+  { name: "CSS", src: icons.css_svg },
+];
+
+const calculator = [
+  { name: "JavaScript", src: icons.js_svg },
+  { name: "TypeScript", src: icons.ts_svg },
+  { name: "HTML", src: icons.html_svg },
+  { name: "CSS", src: icons.css_svg },
+];
 const droneZoneTechStack = [
-  { name: "Java", src: java },
-  { name: "Android studio", src: android },
-  { name: "Python", src: python },
-  { name: "C++", src: cplusplus },
-  { name: "Firebase", src: firebase },
+  { name: "Java", src: icons.java },
+  { name: "Android studio", src: icons.android },
+  { name: "Python", src: icons.python },
+  { name: "C++", src: icons.cplusplus },
+  { name: "Firebase", src: icons.firebase },
 ];
 
-function Projects() {
+const ProjectHeader = emotionStyled.h2({
+  color: "black",
+  fontSize: "3rem",
+  textAlign: "center",
+  marginTop: "50%",
+  lineHeight: "0",
+  textShadow: styles.neon,
+  textDecoration: "underline",
+  textDecorationStyle: "wavy",
+});
+
+const Projects = () => {
   return (
-    <>
-      <h2 style={{ color: "red" }}>Projects</h2>
+    <div id="projects">
+      <ProjectHeader>Projects</ProjectHeader>
+
       <Card.Grid>
         <Card>
           <Card.Title>ClimbTracker</Card.Title>
@@ -78,6 +96,14 @@ function Projects() {
               improvements, finding nearby gyms, registering with Google
               accounts, and unlocking achievements.
             </Card.Description>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/ClimbTracker"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
             <Card.Description>
               <TechStack
                 title="Technologies used in this project"
@@ -100,6 +126,14 @@ function Projects() {
               like only listen to rock songs from one of my playlists that
               consists of several different genres.
             </Card.Description>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/spotifyApp"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
             <Card.Description>
               <TechStack
                 title="Technologies used in this project"
@@ -122,10 +156,94 @@ function Projects() {
             <Card.Description>
               This is my first application created with C# and ASP.NET.
             </Card.Description>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/JokesApp"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
             <Card.Description>
               <TechStack
                 title="Technologies used in this project"
                 technologies={jokesAppTechStack}
+              />
+            </Card.Description>
+          </Card.Content>
+        </Card>
+
+        <Card>
+          <Card.Title>React signin/register app</Card.Title>
+          <Card.Content>
+            <Card.Description>
+              My first react app. A sign-in/register application with an Express
+              server and a mysql database. Frontend is built with Bootstrap and
+              Tanstack table.
+            </Card.Description>
+
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/React-sign-in-app"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
+            <Card.Description>
+              <TechStack
+                title="Technologies used in this project"
+                technologies={signInTechStack}
+              />
+            </Card.Description>
+          </Card.Content>
+        </Card>
+
+        <Card>
+          <Card.Title>DevRoom - Social media app</Card.Title>
+          <Card.Content>
+            <Card.Description>
+              This application allows users to share posts, explore feeds, and
+              view other users' profiles. Built with TypeScript, HTML, and CSS,
+              this app provides a seamless and interactive experience for social
+              networking.
+            </Card.Description>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/Social-media-app"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
+            <Card.Description>
+              <TechStack
+                title="Technologies used in this project"
+                technologies={devRoom}
+              />
+            </Card.Description>
+          </Card.Content>
+        </Card>
+
+        <Card>
+          <Card.Title>Calculator</Card.Title>
+          <Card.Content>
+            <Card.Description>
+              If you haven't built a calculator app, can you really call
+              yourself a programmer?
+            </Card.Description>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/Calculator-app"
+              target="_blank"
+            >
+              Check it out on GitHub!
+            </Link>
+            <Card.Description>
+              <TechStack
+                title="Technologies used in this project"
+                technologies={calculator}
               />
             </Card.Description>
           </Card.Content>
@@ -160,8 +278,8 @@ function Projects() {
           </Card.Content>
         </Card>
       </Card.Grid>
-    </>
+    </div>
   );
-}
+};
 
 export default Projects;

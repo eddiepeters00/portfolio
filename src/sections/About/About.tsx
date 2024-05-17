@@ -1,26 +1,33 @@
-import {
-  css_svg,
-  html_svg,
-  js_svg,
-  node_svg,
-  react_svg,
-  ts_svg,
-} from "../../assets/images";
+import * as icons from "../../assets/images";
 import Card from "../../components/Card/Card";
 import { TechStack } from "../../components/TechStack/TechStack";
 
-const techStack = [
-  { name: "Javascript", src: js_svg },
-  { name: "TypeScript", src: ts_svg },
-  { name: "React.js", src: react_svg },
-  { name: "Node.js", src: node_svg },
-  { name: "CSS", src: css_svg },
-  { name: "HTML", src: html_svg },
+const languages = [
+  { name: "Javascript", src: icons.js_svg },
+  { name: "TypeScript", src: icons.ts_svg },
+  { name: "React.js", src: icons.react_svg },
+  { name: "Next.js", src: icons.next },
+  { name: "Node.js", src: icons.node_svg },
+  { name: "Tanstack Query", src: icons.tanstack },
+  { name: "CSS", src: icons.css_svg },
+  { name: "Tailwind", src: icons.tailwind },
+  { name: "HTML", src: icons.html_svg },
+  { name: "Java", src: icons.java },
+  { name: "C#", src: icons.csharp },
+  { name: "ASP.NET", src: icons.aspnet },
+];
+
+const databases = [
+  { name: "MongoDB", src: icons.mongoDB },
+  { name: "PostgreSQL", src: icons.postgres },
+  { name: "MySQL", src: icons.mysql },
+  { name: "MSSQL", src: icons.mssql },
+  { name: "Firebase", src: icons.firebase },
 ];
 
 function About() {
   return (
-    <Card style={{ scrollMarginBlock: "10rem" }}>
+    <Card id="about" style={{ scrollMarginBlock: "10rem" }}>
       <Card.Title>About me</Card.Title>
       <Card.Content>
         <Card.Description>
@@ -42,7 +49,8 @@ function About() {
         </Card.Description>
       </Card.Content>
 
-      <TechStack technologies={techStack} />
+      <TechStack technologies={languages} />
+      <TechStack title="Databases" technologies={databases} />
     </Card>
   );
 }

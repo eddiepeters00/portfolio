@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import { useSpring, animated, config } from "react-spring";
-import Button from "../../components/Button/Button";
+
 import { colors } from "../../assets/colors/colors";
+import Link from "../../components/Link/Link";
 
 const StyledSection = animated(
   styled.section({
@@ -54,17 +55,12 @@ function Hero() {
         <HeroTitle>Welcome to my portfolio</HeroTitle>
         <HeroText>Have a look around and dont hesitate to contact me</HeroText>
         <ButtonContainer style={heroAnimation}>
-          <Button variant="primary" onClick={() => {}}>
+          <Link variant="primary" href="#projects">
             Check out my projects
-          </Button>
-          <Button
-            variant="outlined"
-            onClick={() => {
-              console.log("Clicked");
-            }}
-          >
+          </Link>
+          <Link variant="outlined" href="#about">
             Get to know me
-          </Button>
+          </Link>
         </ButtonContainer>
       </HeroContainer>
     </StyledSection>

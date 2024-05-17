@@ -20,6 +20,9 @@ import cplusplus from "./icons8-c.svg";
 import android from "./icons8-android.svg";
 import python from "./icons8-python.svg";
 import java from "./java.png";
+import mysql from "./icons8-mysql.svg";
+import postgres from "./icons8-postgresql.svg";
+import spotify from "./spotify.png";
 export {
   css_svg,
   html_svg,
@@ -43,4 +46,7 @@ export {
   python,
   cplusplus,
   java,
+  mysql,
+  postgres,
+  spotify,
 };

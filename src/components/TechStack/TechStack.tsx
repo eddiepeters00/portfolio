@@ -48,7 +48,6 @@ export const TechStack = ({ title = "TechStack", technologies }: Props) => {
             <span
               style={{
                 padding: ".5rem",
-                whiteSpace: "nowrap",
               }}
             >
               {tech.name}
