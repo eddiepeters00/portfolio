@@ -10,10 +10,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 body {
   background-color: black;
 }

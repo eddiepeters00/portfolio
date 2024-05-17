@@ -12,6 +12,8 @@ const StyledHeader = styled.header({
   alignItems: "center",
   padding: "1rem",
   width: "100%",
+  backgroundColor: "rgba(0,0,0,0.5)",
+  backdropFilter: "blur(5px)",
 });
 
 const StyledLogo = styled.h1({

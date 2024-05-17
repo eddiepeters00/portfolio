@@ -12,7 +12,6 @@ const StyledCard = styled(motion.div)({
   justifyContent: "center",
   backgroundColor: colors.backgroundColor.darkBlue,
   marginBlock: "10rem",
-  scrollSnapAlign: "center",
   padding: "4rem",
 });
 
@@ -23,6 +22,7 @@ const StyledTitle = styled.h3({
 
 const StyledDescription = styled.p({
   color: colors.textColor.gray,
+  fontSize: "1.25rem",
 });
 
 const StyledContent = styled.div({

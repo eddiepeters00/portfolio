@@ -45,7 +45,14 @@ export const TechStack = ({ title = "TechStack", technologies }: Props) => {
             }}
           >
             <img style={{ maxWidth: "100%", padding: "1rem" }} src={tech.src} />
-            <span style={{ padding: ".5rem" }}>{tech.name}</span>
+            <span
+              style={{
+                padding: ".5rem",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {tech.name}
+            </span>
           </div>
         ))}
       </div>
