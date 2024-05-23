@@ -38,6 +38,7 @@ export const TechStack = ({ title = "TechStack", technologies }: Props) => {
       >
         {technologies.map((tech) => (
           <div
+            key={tech.name}
             style={{
               display: "grid",
               placeItems: "center",

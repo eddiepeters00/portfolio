@@ -104,12 +104,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={climbTrackerTechStack}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={climbTrackerTechStack}
+            />
           </Card.Content>
         </Card>
 
@@ -134,12 +132,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={spotifyTechStack}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={spotifyTechStack}
+            />
           </Card.Content>
         </Card>
 
@@ -164,12 +160,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={jokesAppTechStack}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={jokesAppTechStack}
+            />
           </Card.Content>
         </Card>
 
@@ -190,12 +184,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={signInTechStack}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={signInTechStack}
+            />
           </Card.Content>
         </Card>
 
@@ -216,12 +208,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={devRoom}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={devRoom}
+            />
           </Card.Content>
         </Card>
 
@@ -240,12 +230,10 @@ const Projects = () => {
             >
               Check it out on GitHub!
             </Link>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={calculator}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={calculator}
+            />
           </Card.Content>
         </Card>
 
@@ -269,12 +257,10 @@ const Projects = () => {
               University in 2022. It was a fantastic experience experimenting
               with such an extensive system and learning new technologies.
             </Card.Description>
-            <Card.Description>
-              <TechStack
-                title="Technologies used in this project"
-                technologies={droneZoneTechStack}
-              />
-            </Card.Description>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={droneZoneTechStack}
+            />
           </Card.Content>
         </Card>
       </Card.Grid>

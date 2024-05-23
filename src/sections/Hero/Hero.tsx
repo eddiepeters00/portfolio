@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 import { useSpring, animated, config } from "react-spring";
-
 import { colors } from "../../assets/colors/colors";
 import Link from "../../components/Link/Link";
+import { styles } from "../../assets/styles/styles";
 
+// Styled components
 const StyledSection = animated(
   styled.section({
     height: "100dvh",
@@ -30,6 +31,7 @@ const HeroText = styled.p({
   color: colors.textColor.gray,
   fontWeight: "500",
   marginTop: ".5rem",
+  fontSize: "1.15rem",
 });
 
 const ButtonContainer = animated(
@@ -37,11 +39,23 @@ const ButtonContainer = animated(
     display: "flex",
     gap: "1rem",
     height: "4rem",
-    marginTop: "2rem",
+    marginTop: "4rem",
   })
 );
 
+const ContactLink = styled.a({
+  fontSize: "1.25rem",
+  color: "black",
+  textShadow: styles.neon,
+  transition: "all .2s",
+
+  "&:hover": {
+    color: colors.backgroundColor.lightRed,
+  },
+});
+
 function Hero() {
+  //Animation for the hero section
   const heroAnimation = useSpring({
     opacity: 1,
     translateY: 0,
@@ -53,7 +67,10 @@ function Hero() {
     <StyledSection style={heroAnimation}>
       <HeroContainer>
         <HeroTitle>Welcome to my portfolio</HeroTitle>
-        <HeroText>Have a look around and dont hesitate to contact me</HeroText>
+        <HeroText>
+          Have a look around and don't hesitate to{" "}
+          <ContactLink href="#contact">contact me</ContactLink>
+        </HeroText>
         <ButtonContainer style={heroAnimation}>
           <Link variant="primary" href="#projects">
             Check out my projects
