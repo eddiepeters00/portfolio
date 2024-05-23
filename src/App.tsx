@@ -7,14 +7,14 @@ import Contact from "./sections/Contact/Contact";
 
 function App() {
   return (
-    <>
+    <div style={{ display: "grid" }}>
       <Progressbar />
       <Header />
       <Hero />
       <About />
       <Projects />
       <Contact />
-    </>
+    </div>
   );
 }
 
