@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { colors } from "../../assets/colors/colors";
 
 const CardGrid = styled.div({
@@ -11,8 +11,12 @@ const StyledCard = styled(motion.div)({
   display: "grid",
   justifyContent: "center",
   backgroundColor: colors.backgroundColor.darkBlue,
-  marginBlock: "10rem",
   padding: "4rem",
+  borderRadius: "1rem",
+
+  "@media (min-width: 600px)": {
+    margin: "10rem",
+  },
 });
 
 const StyledTitle = styled.h3({
@@ -43,7 +47,47 @@ const Card: React.FC<CardProps> & {
   Content: typeof StyledContent;
   Grid: typeof CardGrid;
 } = ({ children, ...CardProps }) => {
-  return <StyledCard {...CardProps}>{children}</StyledCard>;
+  const controls = useAnimation();
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            controls.start({ opacity: 1 });
+          } else {
+            controls.start({ opacity: "50%" });
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [controls]);
+
+  return (
+    <StyledCard
+      ref={cardRef}
+      initial={{ opacity: 0 }}
+      animate={controls}
+      transition={{ duration: 0.5 }}
+      {...CardProps}
+    >
+      {children}
+    </StyledCard>
+  );
 };
 
 Card.Grid = CardGrid;
