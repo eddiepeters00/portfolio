@@ -3,6 +3,8 @@ import emailjs from "@emailjs/browser";
 import emotionStyled from "@emotion/styled";
 import { colors } from "../../assets/colors/colors";
 import Card from "../../components/Card/Card";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StyledContactForm = emotionStyled.form({
   width: "50dvw",
@@ -66,33 +68,37 @@ const StyledTextArea = emotionStyled.textarea({
 });
 
 export default function Contact() {
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (process.env.SERVICE_ID && process.env.TEMPLATE_ID && form.current)
-      emailjs
-        .sendForm(
-          process.env.SERVICE_ID,
-          process.env.TEMPLATE_ID,
-          form.current,
-          {
-            publicKey: process.env.PUBLIC_KEY,
-          }
-        )
-        .then(
-          () => {
-            console.log("SUCCESS!");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
-        );
+    emailjs
+      .sendForm(
+        process.env.SERVICE_ID ?? "",
+        process.env.TEMPLATE_ID ?? "",
+        form.current ?? "",
+        {
+          publicKey: process.env.PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          toast.success(
+            "Thank you for reaching out! I will get back to you soon.",
+            { position: "top-right" }
+          );
+          form.current && form.current.reset();
+        },
+        () => {
+          toast.error("Something went wrong!", { position: "top-right" });
+        }
+      );
   };
 
   return (
     <Card id="contact">
+      <ToastContainer />
       <Card.Title>Contact me</Card.Title>
       <Card.Description>
         Send an email to{" "}
