@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import emotionStyled from "@emotion/styled";
 import { colors } from "../../assets/colors/colors";
 import Card from "../../components/Card/Card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../../components/Loader/Loader";
 
 const StyledContactForm = emotionStyled.form({
   width: "50dvw",
@@ -69,9 +70,12 @@ const StyledTextArea = emotionStyled.textarea({
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
+  const [isEmailSent, setIsEmailSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
     emailjs
       .sendForm(
@@ -89,47 +93,66 @@ export default function Contact() {
             { position: "top-right" }
           );
           form.current && form.current.reset();
+          setIsEmailSent(true);
         },
+
         () => {
           toast.error("Something went wrong!", { position: "top-right" });
         }
-      );
+      )
+      .finally(() => {
+        setIsLoading(false);
+        isLoading ? <></> : isEmailSent ? <></> : <></>;
+      });
   };
 
   return (
     <Card id="contact">
       <ToastContainer />
-      <Card.Title>Contact me</Card.Title>
-      <Card.Description>
-        Send an email to{" "}
-        <span style={{ color: colors.backgroundColor.lightRed }}>
-          eddie.peters00@outlook.com
-        </span>{" "}
-        or use the form below!
-      </Card.Description>
-      <Card.Content>
-        <StyledContactForm ref={form} onSubmit={sendEmail}>
-          <div style={{ display: "grid" }}>
-            <StyledLabel>Name</StyledLabel>
-            <StyledInput type="text" name="user_name" />
-          </div>
-          <div style={{ display: "grid" }}>
-            <StyledLabel>Email</StyledLabel>
-            <StyledInput type="email" name="user_email" required />
-          </div>
+      {isEmailSent ? (
+        <>
+          <Card.Title>Thanks for reaching out to me!</Card.Title>
+          <Card.Description>
+            I will make sure to get back to you as soon as possible!
+          </Card.Description>
+        </>
+      ) : (
+        <>
+          <Card.Title>Contact me</Card.Title>
+          <Card.Description>
+            Send an email to{" "}
+            <span style={{ color: colors.backgroundColor.lightRed }}>
+              eddie.peters00@outlook.com
+            </span>{" "}
+            or use the form below!
+          </Card.Description>
+          <Card.Content>
+            <StyledContactForm ref={form} onSubmit={sendEmail}>
+              <div style={{ display: "grid" }}>
+                <StyledLabel>Name</StyledLabel>
+                <StyledInput type="text" name="user_name" />
+              </div>
+              <div style={{ display: "grid" }}>
+                <StyledLabel>Email</StyledLabel>
+                <StyledInput type="email" name="user_email" required />
+              </div>
 
-          <div style={{ display: "grid" }}>
-            <StyledLabel>Message</StyledLabel>
-            <StyledTextArea name="message" required minLength={10} />
-          </div>
+              <div style={{ display: "grid" }}>
+                <StyledLabel>Message</StyledLabel>
+                <StyledTextArea name="message" required minLength={10} />
+              </div>
 
-          <StyledInput
-            type="submit"
-            value="Send email"
-            className="submit primary medium"
-          />
-        </StyledContactForm>
-      </Card.Content>
+              <StyledInput
+                type="submit"
+                value={isLoading ? "Sending..." : "Send email"}
+                className="submit primary medium"
+                disabled={isLoading}
+              />
+              {isLoading && <Loader />}
+            </StyledContactForm>
+          </Card.Content>
+        </>
+      )}
     </Card>
   );
 }

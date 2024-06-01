@@ -53,7 +53,7 @@ export const TechStack = ({ title = "TechStack", technologies }: Props) => {
   const slideAnimation = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: config.slow,
+    config: config.wobbly,
   });
 
   return (
