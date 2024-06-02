@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader/Loader";
 
 const StyledContactForm = emotionStyled.form({
-  width: "50dvw",
   maxWidth: "1500px",
 });
 
@@ -19,6 +18,7 @@ const StyledLabel = emotionStyled.label({
 
 const StyledInput = emotionStyled.input({
   padding: ".4rem",
+  width: "100%",
   "&.submit": {
     marginTop: "2rem",
     borderRadius: ".25rem",
@@ -66,6 +66,7 @@ const StyledInput = emotionStyled.input({
 
 const StyledTextArea = emotionStyled.textarea({
   padding: ".4rem",
+  width: "100%",
 });
 
 export default function Contact() {
