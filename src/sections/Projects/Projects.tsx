@@ -70,6 +70,7 @@ const ProjectHeader = emotionStyled.h2({
   fontSize: "3rem",
   textAlign: "center",
   marginTop: "25%",
+  marginBottom: "15%",
   lineHeight: "0",
   textShadow: styles.neon,
   textDecoration: "underline",
