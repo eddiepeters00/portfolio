@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
-import { useSpring, animated } from "@react-spring/web";
 import { useRef } from "react";
 import { colors } from "../../assets/colors/colors";
 import { styles } from "../../assets/styles/styles";
-import { config } from "react-spring";
 
 const Container = styled.div({
   backgroundColor: "black",
@@ -25,23 +23,65 @@ const Title = styled.h3`
 const TechGrid = styled.div`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 `;
 
-const TechItem = styled(animated.div)`
-  display: grid;
-  place-items: center;
-  background-color: hsl(220deg 40% 21% / 80%);
-`;
+const TechItem = styled.div({
+  backgroundColor: "transparent",
+  width: "100%",
+  paddingTop: "100%",
+  position: "relative",
+  perspective: "1000px",
+});
 
-const TechImage = styled.img`
-  max-width: 100%;
-  padding: 1rem;
-`;
+const FlipCardInner = styled.div({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  textAlign: "center",
+  transition: "transform 0.5s",
+  transformStyle: "preserve-3d",
 
-const TechName = styled.span`
-  padding: 0.5rem;
-`;
+  ":hover": {
+    transform: "rotateY(180deg)",
+  },
+});
+
+const FlipCardFront = styled.div({
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  padding: "1rem",
+  backgroundColor: `${colors.backgroundColor.deepBlue}`,
+  color: "black",
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const FlipCardBack = styled.div({
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backgroundColor: `${colors.backgroundColor.deepBlue}`,
+  color: "white",
+  transform: "rotateY(180deg)",
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
+
+const TechName = styled.span({
+  fontSize: "1.25rem",
+  color: "black",
+  textShadow: styles.neon,
+});
 
 type Props = {
   title?: string;
@@ -50,29 +90,31 @@ type Props = {
 
 export const TechStack = ({ title = "TechStack", technologies }: Props) => {
   const techContainerRef = useRef<HTMLDivElement>(null);
-  const slideAnimation = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    config: config.wobbly,
-  });
 
   return (
     <Container ref={techContainerRef}>
       <Title>{title}</Title>
       <TechGrid>
-        {technologies.map((tech) => {
-          return (
-            <TechItem
-              key={tech.name}
-              className="tech-item"
-              data-tech={tech.name}
-              style={slideAnimation}
-            >
-              <TechImage src={tech.src} alt={tech.name} />
-              <TechName>{tech.name}</TechName>
-            </TechItem>
-          );
-        })}
+        {technologies.map((tech) => (
+          <TechItem key={tech.name}>
+            <FlipCardInner>
+              <FlipCardFront>
+                <img
+                  src={tech.src}
+                  alt={tech.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </FlipCardFront>
+              <FlipCardBack>
+                <TechName>{tech.name}</TechName>
+              </FlipCardBack>
+            </FlipCardInner>
+          </TechItem>
+        ))}
       </TechGrid>
     </Container>
   );

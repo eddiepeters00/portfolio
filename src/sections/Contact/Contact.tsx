@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import emotionStyled from "@emotion/styled";
+import styled from "@emotion/styled";
 import { colors } from "../../assets/colors/colors";
 import Card from "../../components/Card/Card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader/Loader";
+import { motion } from "framer-motion";
 
 const StyledContactForm = emotionStyled.form({
   maxWidth: "1500px",
@@ -16,7 +18,7 @@ const StyledLabel = emotionStyled.label({
   marginTop: "2rem",
 });
 
-const StyledInput = emotionStyled.input({
+const StyledInput = styled(motion.input)({
   padding: ".4rem",
   width: "100%",
   "&.submit": {
@@ -144,8 +146,9 @@ export default function Contact() {
               </div>
 
               <StyledInput
+                whileTap={{ scale: 0.85 }}
                 type="submit"
-                value={isLoading ? "Sending..." : "Send email"}
+                value={isLoading ? "Sending..." : "Send"}
                 className="submit primary medium"
                 disabled={isLoading}
               />
