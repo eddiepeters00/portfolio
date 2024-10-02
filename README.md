@@ -1,5 +1,5 @@
 # Eddie Peters Portfolio
-
+Check it out here: https://eddiepeters.netlify.app/ </br></br>
 Welcome to my GitHub portfolio! This repository showcases my work as a developer and highlights some of the projects I've been working on. 
 
 This project was built using **TypeScript**, **React**, **Vite** and **EmotionJS**.
