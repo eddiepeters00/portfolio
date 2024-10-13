@@ -5,6 +5,15 @@ import { TechStack } from "../../components/TechStack/TechStack";
 import { styles } from "../../assets/styles/styles";
 import Link from "../../components/Link/Link";
 
+const authMicroserviceTechStack = [
+  { name: "TypeScript", src: icons.ts_svg },
+  { name: "Next.js", src: icons.next },
+  { name: "Node.js", src: icons.node_svg },
+  { name: "MongoDB", src: icons.mongoDB },
+  { name: "Tailwind", src: icons.tailwind },
+  { name: "HTML", src: icons.html_svg },
+];
+
 const climbTrackerTechStack = [
   { name: "TypeScript", src: icons.ts_svg },
   { name: "Next.js", src: icons.next },
@@ -83,6 +92,78 @@ const Projects = () => {
       <ProjectHeader>Projects</ProjectHeader>
 
       <Card.Grid>
+        <Card>
+          <Card.Title>Authentication Microservice System</Card.Title>
+          <Card.Content>
+            <Card.Description>
+              This project is composed of three backend microservices and a
+              single frontend application. The backend includes a Gateway, a JWT
+              token handler, and a User Service that manages all user-related
+              requests. The frontend is built using Next.js. All the
+              applications are developed with Node.js, following clean code
+              principles to ensure clarity, maintainability, and scalability.
+            </Card.Description>
+
+            <Card.Description>
+              The project utilizes MongoDB for database management, Redis for
+              caching, and Node.js with Express.js for backend services. A
+              custom logging function was implemented to efficiently track
+              errors and application flow, enhancing maintainability and
+              debugging.
+            </Card.Description>
+
+            <Card.Description>
+              All components are developed following clean code principles,
+              showcasing my ability to design and implement a scalable,
+              high-performance microservices architecture with a focus on
+              security and reliability.
+            </Card.Description>
+
+            <h3 style={{ color: "white" }}>
+              Check out the repositories for this project below!
+            </h3>
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/auth-microservice"
+              target="_blank"
+            >
+              User microservice
+            </Link>
+
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/ms_gateway"
+              target="_blank"
+            >
+              Gateway microservice
+            </Link>
+
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/ms-jwt-token"
+              target="_blank"
+            >
+              JWT microservice
+            </Link>
+
+            <Link
+              variant="secondary"
+              size="medium"
+              href="https://github.com/eddiepeters00/ms-client"
+              target="_blank"
+            >
+              Frontend
+            </Link>
+            <TechStack
+              title="Technologies used in this project"
+              technologies={authMicroserviceTechStack}
+            />
+          </Card.Content>
+        </Card>
+
         <Card>
           <Card.Title>ClimbTracker</Card.Title>
           <Card.Content>
