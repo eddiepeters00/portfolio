@@ -8,6 +8,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader/Loader";
 import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const StyledContactForm = emotionStyled.form({
   maxWidth: "1500px",
@@ -76,37 +79,44 @@ export default function Contact() {
   const [isEmailSent, setIsEmailSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const sendEmail = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const validationSchema = z.object({
+    name: z.string(),
+    email: z.string().email(),
+    message: z.string(),
+  });
+
+  type SchemaProps = z.infer<typeof validationSchema>;
+
+  const { register, handleSubmit } = useForm<SchemaProps>({
+    resolver: zodResolver(validationSchema),
+  });
+
+  const sendEmail = async () => {
     setIsLoading(true);
 
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         process.env.SERVICE_ID ?? "",
         process.env.TEMPLATE_ID ?? "",
         form.current ?? "",
         {
           publicKey: process.env.PUBLIC_KEY,
         }
-      )
-      .then(
-        () => {
-          toast.success(
-            "Thank you for reaching out! I will get back to you soon.",
-            { position: "top-right" }
-          );
-          form.current && form.current.reset();
-          setIsEmailSent(true);
-        },
+      );
 
-        () => {
-          toast.error("Something went wrong!", { position: "top-right" });
-        }
-      )
-      .finally(() => {
-        setIsLoading(false);
-        isLoading ? <></> : isEmailSent ? <></> : <></>;
-      });
+      toast.success(
+        "Thank you for reaching out! I will get back to you soon.",
+        { position: "top-right" }
+      );
+
+      form.current && form.current.reset();
+      setIsEmailSent(true);
+    } catch (error) {
+      toast.error("Something went wrong!", { position: "top-right" });
+    } finally {
+      setIsLoading(false);
+      isLoading ? <></> : isEmailSent ? <></> : <></>;
+    }
   };
 
   return (
@@ -130,19 +140,23 @@ export default function Contact() {
             or use the form below!
           </Card.Description>
           <Card.Content>
-            <StyledContactForm ref={form} onSubmit={sendEmail}>
+            <StyledContactForm ref={form} onSubmit={handleSubmit(sendEmail)}>
               <div style={{ display: "grid" }}>
-                <StyledLabel>Name</StyledLabel>
-                <StyledInput type="text" name="user_name" />
+                <StyledLabel htmlFor="name">Name</StyledLabel>
+                <StyledInput type="text" {...register("name")} name="name" />
               </div>
               <div style={{ display: "grid" }}>
-                <StyledLabel>Email</StyledLabel>
-                <StyledInput type="email" name="user_email" required />
+                <StyledLabel htmlFor="email">Email</StyledLabel>
+                <StyledInput type="email" {...register("email")} required />
               </div>
 
               <div style={{ display: "grid" }}>
-                <StyledLabel>Message</StyledLabel>
-                <StyledTextArea name="message" required minLength={10} />
+                <StyledLabel htmlFor="message">Message</StyledLabel>
+                <StyledTextArea
+                  required
+                  minLength={10}
+                  {...register("message")}
+                />
               </div>
 
               <StyledInput
